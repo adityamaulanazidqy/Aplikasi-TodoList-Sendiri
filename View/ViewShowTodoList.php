@@ -23,10 +23,14 @@ global $todoList;
     if ($pilihan == "1"){
         viewAddTodoList();
     }else if($pilihan == "2"){
-        viewRemoveTodoList();
+        if (sizeof($todoList) == 0){
+            echo "Maaf TodoList Masih Kosong, Tambah Dulu Todolistnya".PHP_EOL;
+        }else if (sizeof($todoList) > 0) {
+            viewRemoveTodoList();
+        }
     }else if($pilihan == "3"){
         if (sizeof($todoList) == 0){
-            echo "Maaf TodoList Masih Kosong".PHP_EOL;
+            echo "Maaf TodoList Masih Kosong, Tambah Dulu Todolistnya".PHP_EOL;
         }else if (sizeof($todoList) > 0) {
             editTodoList();
         }
