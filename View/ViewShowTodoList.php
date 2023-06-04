@@ -8,6 +8,7 @@ require_once __DIR__."/../View/viewRemoveTodoList.php";
 require_once __DIR__."/../Helper/Input.php";
 
 function viewShowTodoList(){
+global $todoList;
   while (true){
     showTodoList(); 
 
@@ -24,7 +25,11 @@ function viewShowTodoList(){
     }else if($pilihan == "2"){
         viewRemoveTodoList();
     }else if($pilihan == "3"){
-        editTodoList();
+        if (sizeof($todoList) == 0){
+            echo "Maaf TodoList Masih Kosong".PHP_EOL;
+        }else if (sizeof($todoList) > 0) {
+            editTodoList();
+        }
     }else if($pilihan == "x"){
         // Akan Keluar Dari Proggram
         break;

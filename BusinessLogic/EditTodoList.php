@@ -13,7 +13,7 @@ function editTodoList() {
     $number = input("TodoList Nomor Berapa");
 
     if ($number > sizeof($todoList)){
-        echo "Gagal Mengedit Todo, Isi Todo Terlebih Dahulu".PHP_EOL;
+        echo "Gagal Memproses, ID Tidak Ditemukan".PHP_EOL;
         viewShowTodoList();
     }else if ($number == 0){
         echo "Gagal Mengedit Todo, Perintah Tidak Dimengerti".PHP_EOL;
